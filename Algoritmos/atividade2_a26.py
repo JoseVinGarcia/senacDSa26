@@ -35,10 +35,11 @@ try:
     df_bolsa_familia.write_parquet(ENDERECO_DADOS + "bolsa_familia.parquet")
 
     # Print e finais
-    print(df.head())
+    print(df_bolsa_familia.head())
 
     # Deletando df e coletando dados
     del df
+    del df_bolsa_familia
     gc.collect()
 
     # Print final
@@ -46,5 +47,8 @@ try:
     print(f"Tempo de processamento: {fim - inicio}")
 
 except ImportError as e:
+    del df
+    del df_bolsa_familia
+    gc.collect()
     print(f"Erro {e}.")
 
