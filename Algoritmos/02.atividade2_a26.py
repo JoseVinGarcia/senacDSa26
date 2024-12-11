@@ -51,4 +51,3 @@ except ImportError as e:
     del df_bolsa_familia
     gc.collect()
     print(f"Erro {e}.")
-
